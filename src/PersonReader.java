@@ -48,8 +48,8 @@ import java.util.Scanner;
                     }
                 //moved print header here
                     // Print the header
-                    System.out.println(String.format("%-6s %-8s %-5s %-5s %-5s", "ID", "FirstName", "LastName", "Title", "YOB"));
-                    System.out.println("-------------------------------------------------");
+                    System.out.println(String.format("%-10s %-15s %-15s %-10s %-5s", "ID", "FirstName", "LastName", "Title", "YOB"));
+                    System.out.println("-----------------------------------------------------------");
                     for (Person Person : people) {
                         System.out.println(String.format("%-10s %-15s %-15s %-10s %-5d",
                                 Person.getID(), Person.getFirstName(), Person.getLastName(), Person.getTitle(), Person.getYOB()));
