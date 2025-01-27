@@ -56,4 +56,25 @@ public class Person {
     public void setYOB(int YOB) {
         this.YOB = YOB;
     }
+    //tostring method
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", ID='" + ID + '\'' +
+                ", title='" + title + '\'' +
+                ", YOB=" + YOB +
+                '}';
+    }
+//additional methods
+    public String fullName() { return firstName + " " + lastName; }
+    public String formalName() { return title + " " + fullName(); }
+    public int getAge() {
+        return java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) - YOB;
+    }
+    public int getAge(int year) { return year - YOB; }
+    public String toCSV() { return toString(); }
+    public String toJSON() { /* Implement JSON */ return ""; }
+    public String toXML() { /* Implement XML */ return ""; }
 }
