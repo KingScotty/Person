@@ -15,34 +15,44 @@ public class PersonGenerator {
         Path file = Paths.get(workingDirectory.getPath() + "\\src\\personData.txt");
 
         Boolean done = false;
-
+/* Code not currently needed anymore
         String personRec = "";
         String ID = "";
         String firstName = "";
         String lastName = "";
         String title = "";
         int YOB = 0;
-
+*/
         do {
             ID = SafeInput.getNonZeroLenString(in, "Enter the ID [6 digits]: ");
             firstName = SafeInput.getNonZeroLenString(in, "Enter the first name:");
             lastName = SafeInput.getNonZeroLenString(in, "Enter the last name: ");
             title = SafeInput.getNonZeroLenString(in, "Enter the title ");
             YOB = SafeInput.getRangedInt(in, "Enter the year of birth [1900-2020]: ", 1900, 2020);
-
+/* Code not currently needed anymore
             personRec = ID + "," + firstName + "," + lastName + "," + title + "," + YOB;
-            folks.add(personRec);
-
-            done = SafeInput.getYNConfirm(in, "Another person (y/n)? ");
+            folks.add(personRec);*/
+            Person person = new Person(firstName, lastName, ID, title, YOB);
+            people.add(person);
+            //changed prompt to be more clear
+            done = SafeInput.getYNConfirm(in, "Are you done adding persons? (y/n)? ");
 
 
         } while (!done);
-        for (String person : folks) {
-            System.out.println(person);
+        for (Person person : folks) {
+            System.out.println(person.toCSV());
         }
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file.toFile())))
         {
+
+                for (Person person : folks) {
+                    writer.write(person.toCSV());
+                    writer.newLine();
+                }
+            System.out.println("Data file written!");
+
+            /* replaced the following line with the one above
             for(String rec : folks)
             {
                 writer.write(rec, 0, rec.length());
@@ -51,6 +61,8 @@ public class PersonGenerator {
             }
             writer.close();
             System.out.println("Data file written!");
+
+             */
         }
         catch (IOException e)
         {
