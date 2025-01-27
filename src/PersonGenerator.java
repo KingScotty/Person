@@ -24,16 +24,16 @@ public class PersonGenerator {
         int YOB = 0;
 */
         do {
-            ID = SafeInput.getNonZeroLenString(in, "Enter the ID [6 digits]: ");
-            firstName = SafeInput.getNonZeroLenString(in, "Enter the first name:");
-            lastName = SafeInput.getNonZeroLenString(in, "Enter the last name: ");
-            title = SafeInput.getNonZeroLenString(in, "Enter the title ");
-            YOB = SafeInput.getRangedInt(in, "Enter the year of birth [1900-2020]: ", 1900, 2020);
+            String ID = SafeInput.getNonZeroLenString(in, "Enter the ID [6 digits]: ");
+            String firstName = SafeInput.getNonZeroLenString(in, "Enter the first name:");
+            String lastName = SafeInput.getNonZeroLenString(in, "Enter the last name: ");
+            String title = SafeInput.getNonZeroLenString(in, "Enter the title ");
+            int YOB = SafeInput.getRangedInt(in, "Enter the year of birth [1900-2020]: ", 1900, 2020);
 /* Code not currently needed anymore
             personRec = ID + "," + firstName + "," + lastName + "," + title + "," + YOB;
             folks.add(personRec);*/
             Person person = new Person(firstName, lastName, ID, title, YOB);
-            people.add(person);
+            folks.add(person);
             //changed prompt to be more clear
             done = SafeInput.getYNConfirm(in, "Are you done adding persons? (y/n)? ");
 
