@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 public class PersonGenerator {
     public static void main(String[] args) {
-        ArrayList<String> folks = new ArrayList<>();
+        ArrayList<Person> folks = new ArrayList<>();
         Scanner in = new Scanner(System.in);
 
         File workingDirectory = new File(System.getProperty("user.dir"));
@@ -43,18 +43,13 @@ public class PersonGenerator {
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(file.toFile())))
         {
-
-            // Finally can write the file LOL!
-
             for(String rec : folks)
             {
-                writer.write(rec, 0, rec.length());  // stupid syntax for write rec
-                // 0 is where to start (1st char) the write
-                // rec. length() is how many chars to write (all)
-                writer.newLine();  // adds the new line
+                writer.write(rec, 0, rec.length());
+                writer.newLine();
 
             }
-            writer.close(); // must close the file to seal it and flush buffer
+            writer.close();
             System.out.println("Data file written!");
         }
         catch (IOException e)
