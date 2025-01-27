@@ -36,15 +36,16 @@ import java.util.Scanner;
                         line = inFile.nextLine();
                         System.out.println(line);
                         String[] fields = line.split(",");
-                    }
-                    String ID = fields[0].trim();
-                    String firstName = fields[1].trim();
-                    String lastName = fields[2].trim();
-                    String title = fields[3].trim();
-                    int YOB = Integer.parseInt(fields[4].trim());
 
-                    Person person = new Person(firstName, lastName, ID, title, YOB);
-                    people.add(person);  // Add the Person to the list
+                        String ID = fields[0].trim();
+                        String firstName = fields[1].trim();
+                        String lastName = fields[2].trim();
+                        String title = fields[3].trim();
+                        int YOB = Integer.parseInt(fields[4].trim());
+
+                        Person person = new Person(firstName, lastName, ID, title, YOB);
+                        people.add(person);  // Add the Person to the list
+                    }
                 //moved print header here
                     // Print the header
                     System.out.println(String.format("%-6s %-8s %-5s %-5s %-5s", "ID", "FirstName", "LastName", "Title", "YOB"));

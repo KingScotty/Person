@@ -74,7 +74,11 @@ public class Person {
         return java.util.Calendar.getInstance().get(java.util.Calendar.YEAR) - YOB;
     }
     public int getAge(int year) { return year - YOB; }
-    public String toCSV() { return toString(); }
+    /* trying a new CSV format
+    public String toCSV() { return toString(); }*/
+    public String toCSV() {
+        return ID + "," + firstName + "," + lastName + "," + title + "," + YOB;
+    }
     public String toJSON() { /* Implement JSON */ return ""; }
     public String toXML() { /* Implement XML */ return ""; }
 }
