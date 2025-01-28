@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author Tom Wulf Tom.Wulf@uc.edu
  */
-public class SafeInput 
+public class SafeInput
 {
    /**
     * Get a String which contains at least one character

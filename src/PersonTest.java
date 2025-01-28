@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonTest {
@@ -16,15 +15,14 @@ public class PersonTest {
     void formalName() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
         assertEquals("Mr. John Doe", person.formalName());
     }
-
     @org.junit.jupiter.api.Test
     void getAge() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
-        assertEquals(35, person.getAge());
+        assertEquals(40, person.getAge());
     }
 
     @org.junit.jupiter.api.Test
     void testGetAge() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
-        assertEquals(35, person.getAge());
+        assertEquals(40, person.getAge());
     }
 
     @org.junit.jupiter.api.Test
