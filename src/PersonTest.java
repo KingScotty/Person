@@ -3,28 +3,33 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class PersonTest {
+    public static void main(String[] args) {
 
-    @Test
-    public void testFullName() {
-        Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
+    }
+
+    @org.junit.jupiter.api.Test
+    void fullName() {Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
         assertEquals("John Doe", person.fullName());
     }
 
-    @Test
-    public void testFormalName() {
-        Person person = new Person("Jane", "Smith", "654321", "Dr.", 1990);
-        assertEquals("Dr. Jane Smith", person.formalName());
+    @org.junit.jupiter.api.Test
+    void formalName() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
+        assertEquals("Mr. John Doe", person.formalName());
     }
 
-    @Test
-    public void testGetAge() {
-        Person person = new Person("Alice", "Johnson", "789123", "Ms.", 2000);
-        assertEquals(23, person.getAge(2023));
+    @org.junit.jupiter.api.Test
+    void getAge() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
+        assertEquals(35, person.getAge());
     }
 
-    @Test
-    public void testToCSV() {
-        Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
+    @org.junit.jupiter.api.Test
+    void testGetAge() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
+        assertEquals(35, person.getAge());
+    }
+
+    @org.junit.jupiter.api.Test
+    void toCSV() { Person person = new Person("John", "Doe", "123456", "Mr.", 1985);
         assertEquals("123456,John,Doe,Mr.,1985", person.toCSV());
     }
 }
+
