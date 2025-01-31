@@ -30,5 +30,17 @@ class PersonGenerator {
     +main(String[] args)
 }
 
+class SafeInputObj {
+    +String getNonZeroLenString(Scanner pipe, String prompt)
+    +String getMinLenString(Scanner pipe, String prompt, int minLen)
+    +int getRangedInt(Scanner pipe, String prompt, int low, int high)
+    +int getInt(Scanner pipe, String prompt)
+    +double getRangedDouble(Scanner pipe, String prompt, int low, int high)
+    +double getDouble(Scanner pipe, String prompt)
+    +boolean getYNConfirm(Scanner pipe, String prompt)
+    +String getRegExString(Scanner pipe, String prompt, String regExPattern)
+}
+
 PersonGenerator --> Person : uses
+SafeInputObj --> Person : uses
 @enduml
